@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146860c6-f29f-4967-a26b-b8240d0c4e2f" name="Default" comment="scala学习">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/hydra.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/cn/scala/study/PartialFunction/partialFunctionTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,11 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="copyFlieTest.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="copyFlieTest.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/IO/copyFlieTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="670">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="partialFunctionTest.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/PartialFunction/partialFunctionTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -131,6 +133,7 @@
         <option value="$PROJECT_DIR$/src/main/scala/cn/scala/study/Override/Student.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/cn/scala/study/IO/fileTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/cn/scala/study/IO/copyFlieTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/scala/study/PartialFunction/partialFunctionTest.scala" />
       </list>
     </option>
   </component>
@@ -184,7 +187,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="892" />
     <option name="y" value="417" />
     <option name="width" value="1292" />
@@ -441,7 +444,7 @@
       <workItem from="1537410860881" duration="2754000" />
       <workItem from="1537538580117" duration="4559000" />
       <workItem from="1537668465374" duration="9730000" />
-      <workItem from="1537687108529" duration="2721000" />
+      <workItem from="1537687108529" duration="4207000" />
     </task>
     <task id="LOCAL-00001" summary="scala学习">
       <created>1537690584900</created>
@@ -454,7 +457,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100378000" />
+    <option name="totallyTimeSpent" value="101864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,11 +469,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="892" y="417" width="1292" height="1050" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32938644" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49946696" visible="true" weight="0.4375" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49946696" weight="0.42995688" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.09041981" />
@@ -483,7 +487,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838537" visible="true" weight="0.26785713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838537" visible="true" weight="0.17590618" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
       <window_info id="Structure" order="1" sideWeight="0.50161463" side_tool="true" weight="0.17430703" />
@@ -556,7 +560,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/spark/spark-core_2.11/2.2.0/spark-core_2.11-2.2.0.jar!/org/apache/spark/util/Utils.class" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/cn/spark/study/core/LineCount.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -589,13 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/spark/study/core/HDFSFile.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -848,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/Return/BreakTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/Override/Student.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
@@ -869,10 +858,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/spark/study/core/HDFSFile.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/Return/BreakTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/IO/copyFlieTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="670">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/scala/study/PartialFunction/partialFunctionTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
