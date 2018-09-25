@@ -3,6 +3,7 @@ package scala.study.Extractor
 class oneParameterExtractorTest {
 
 /*  只有一个参数的提取器
+  一般不常用
 
   之前，已经跟大家讲解过普通的提取器
   相当于是，比如说，接收一个字符串，作为参数
@@ -14,6 +15,7 @@ class oneParameterExtractorTest {
   解析出来的一个字段，是没有办法放在tuple中的，因为scala中的tuple，规定了，必须要两个以及两个以上的值
 
   这个时候，在提取器，unapply方法中，只能将一个字段值，封装在Some对象中，直接返回*/
+
 
   class Person(val name: String)
 
