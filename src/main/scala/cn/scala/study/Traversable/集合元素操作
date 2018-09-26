@@ -22,3 +22,18 @@ col -= (ele1, ele2)	从集合中删除一个子集合		可变集合
 col —= col2			从集合中删除一个子集合		可变集合
 ele +=: col			向集合头部添加一个元素		ArrayBuffer
 col2 ++=: col		向集合头部添加一个集合		ArrayBuffer
+
+
+集合的常用方法
+
+head、last、tail
+length、isEmpty
+sum、max、min
+count、exists、filter、filterNot
+takeWhile、dropWhile
+take、drop、splitAt
+takeRight、dropRight
+sclie
+contains、startsWith、endsWith
+indexOf
+intersect、diff
