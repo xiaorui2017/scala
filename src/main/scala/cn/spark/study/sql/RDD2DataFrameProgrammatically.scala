@@ -40,27 +40,3 @@ object RDD2DataFrameProgrammatically extends App {
   )
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
