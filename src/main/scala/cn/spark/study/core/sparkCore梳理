@@ -1,0 +1,40 @@
+spark程序写完了以后，就要提交到spark集群上面去运行，这就是spark作业（一次代码的运行+一份数据的处理+一次结果的产出）
+
+spark作业是通过spark集群中的多个独立的进程来并行运行的，每个进程都处理一部分数据，从而做到分布式并行计算，才能对大数据进行处理和计算
+作业在多个进程中的运行，是通过SparkContext对象来居中调度的，该对象是在咱们的driver进程中的（包含main方法的程序进程）
+
+SparkContext是支持连接多种集群管理器的（包括Spark Standalone、YARN、Mesos）
+集群管理器是负责为SparkContext代表的spark application，在集群中分配资源的
+这里说的资源是什么？通俗一点，就是分配多个进程，然后每个进程不都有一些cpu core和内存，有了进程、cpu和内存，你的spark作业才能运行啊
+
+这里说的进程具体是什么呢？怎么工作的呢？
+SparkContext会要求集群管理器来分配资源，然后集群管理器就会集群节点上，分配一个或多个executor进程
+这些进程就会负责运行你自己写的spark作业代码，每个进程处理一部分数据
+具体是怎么运行我们的代码的呢？申请到了executor进程之后，SparkContext会发送我们的工程jar包到executor上，这样，executor就有可以执行的代码了
+接着SparkContext会将一些task分发到executor上，每个task执行具体的代码，并处理一小片数据
+此外要注意的一点是，executor进程，会会负责存储你的spark作业代码计算出来的一些中间数据，或者是最终结果数据
+
+关于spark集群架构的一些说明
+1、每个spark application，都有属于自己的executor进程；绝对不可能出现多个spark application共享一个executor进程的
+	executor进程，在整个spark application运行的生命周期内，都会一直存在，不会自己消失的
+	executor进程，最主要的，就是使用多线程的方式，运行SparkContext分配过来的task，来一批task就执行一批，一批执行完了，再换下一批task执行
+2、spark application，跟集群管理器之间，是透明的
+	不管你是哪个集群管理器，我就知道，我找你就可以申请到executor进程就好了
+	所以说，就算在一个能够容纳其他类型的计算作业的集群管理器中，也可以提交spark作业，比如说YARN、Mesos这种
+	大公司里，其实一般都是用YARN作为大数据计算作业管理器的，包括mapreduce、hive、storm和spark，统一在yarn上面运行，统一调度和管理公司的系统资源
+3、driver（其实也就是咱们的main类运行的jvm进程），必须时刻监听着属于它这个spark application的executor进程发来的通信和连接
+	而且driver除了监听，自己也得负责调度整个spark作业（你自己写的spark代码）的调度和运行，也得大量跟executor进程通信，给他们分派计算任务
+	所以driver在网络环境中的位置，还是很重要的，driver尽量离spark集群得近一些
+4、上面说了，driver要调度task给executor执行，所以driver最好和spark集群在一片网络内
+
+一些重要的spark术语
+Application			spark应用程序，说白了，就是用户基于spark api开发的程序，一定是通过一个有main方法的类执行的，比如java开发spark，就是在eclipse中，建立的一个工程
+Application Jar		这个就是把写好的spark工程，打包成一个jar包，其中包括了所有的第三方jar依赖包，比如java中，就用maven+assembly插件打包最方便
+Driver Program		说白了，就是运行程序中main方法的进程，这就是driver，也叫driver进程
+Cluster Manager		集群管理器，就是为每个spark application，在集群中调度和分配资源的组件，比如Spark Standalone、YARN、Mesos等
+Deploy Mode			部署模式，无论是基于哪种集群管理器，spark作业部署或者运行模式，都分为两种，client和cluster，client模式下driver运行在提交spark作业的机器上；cluster模式下，运行在spark集群中
+Worker Node			集群中的工作节点，能够运行executor进程，运行作业代码的节点
+Executor			集群管理器为application分配的进程，运行在worker节点上，负责执行作业的任务，并将数据保存在内存或磁盘中，每个application都有自己的executor
+Job					每个spark application，根据你执行了多少次action操作，就会有多少个job
+Stage				每个job都会划分为多个stage（阶段），每个stage都会有对应的一批task，分配到executor上去执行
+Task				driver发送到executor上执行的计算单元，每个task负责在一个阶段（stage），处理一小片数据，计算出对应的结果
